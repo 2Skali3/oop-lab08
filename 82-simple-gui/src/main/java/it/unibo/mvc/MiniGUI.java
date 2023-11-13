@@ -44,24 +44,22 @@ public class MiniGUI {
         /*
          * P2
          */
-        final JTextField risultato = new JTextField(10);
+        final JTextField risultato = new JTextField("result");
         canvas.add(risultato, BorderLayout.NORTH);
-
-
-
-
-
-        frame.setContentPane(canvas);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*
+         * P3
          * Handlers
          */
         write.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                System.out.println(randomGenerator.nextInt());
+                risultato.setText("" + randomGenerator.nextInt());
             }
         });
+
+        
+        frame.setContentPane(canvas);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     private void display() {
